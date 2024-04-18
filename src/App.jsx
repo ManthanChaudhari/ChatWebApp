@@ -34,9 +34,9 @@ function App() {
     <>
       <Header/>
       <Outlet/>
-      {error && <div className='h-screen w-full flex justify-center items-center'>
+{/*       {error && <div className='h-screen w-full flex justify-center items-center'>
         <h1 className='bg-blue-500'>{error}</h1>
-      </div>}
+      </div>} */}
       {/* <Login/> */}
     </>
   ) : <div className='h-screen w-full flex justify-center items-center flex-col gap-y-2'>
