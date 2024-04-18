@@ -7,6 +7,7 @@ import msgAnimation from "../assets/Animation - 1713295078563.json";
 
 function Home() {
   const userData = useSelector((state) => state.userData);
+ const authorized = useSelector((state) => state.authorized)
   const navigate = useNavigate();
    function handleSubmit() {
     if(authorized){
