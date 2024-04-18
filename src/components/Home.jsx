@@ -8,8 +8,12 @@ import msgAnimation from "../assets/Animation - 1713295078563.json";
 function Home() {
   const userData = useSelector((state) => state.userData);
   const navigate = useNavigate();
-  function handleSubmit() {
+   function handleSubmit() {
+    if(authorized){
     navigate("/chats");
+    }else{
+    navigate("/login");
+    }
   }
   function useApp(){
     navigate("/help");
@@ -22,7 +26,7 @@ function Home() {
           Welcome {userData ? userData.name : "User"} to our MELA!
         </h1>
         <Button
-          text="Get Started >"
+          text= {authorized ? "Get Started >" : "Go to Login"} 
           className="bg-white text-blue-500 text-lg w-52 active:bg-[#dddddd]"
           onClick={handleSubmit}
         />
