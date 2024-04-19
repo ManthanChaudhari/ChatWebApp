@@ -14,7 +14,7 @@ function StartMeet() {
   // const [connectedUsers , setConnectedUsers] = useState([]);
   const userData = useSelector((state) => state.userData);
   const roomCode = useSelector((state) => state.room);
-  const socket = useMemo(() => io("localhost:3001"), []);
+  const socket = useMemo(() => io("http://localhost:3001"), []);
   const ref = useRef(null);
   const dispatch = useDispatch();
 
