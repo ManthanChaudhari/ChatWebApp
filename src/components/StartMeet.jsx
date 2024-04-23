@@ -44,8 +44,7 @@ function StartMeet() {
       }
       socket.on("user-joined", (data) => {
         const joinedUserMsg = `${userData.name === data.name ? "You" : data.name} joined the room`;
-        setAlert((prev) => [...prev, joinedUserMsg]);
-        
+        setAlert((prev) => [...prev, joinedUserMsg]); 
       });
     });
     socket.on("receive-msg", (data) => {
@@ -57,7 +56,7 @@ function StartMeet() {
       socket.off("user-joined");
       //socket.disconnect();
     }
-  }, []);
+  }, [roomCode, socket]);
   
   return (
     <div className="w-full h-full">
