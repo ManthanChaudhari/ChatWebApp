@@ -54,7 +54,7 @@ function StartMeet() {
       socket.off("connect");
       socket.off("receive-msg");
       socket.off("user-joined");
-      //socket.disconnect();
+      socket.disconnect();
     }
   }, [roomCode, socket]);
   
