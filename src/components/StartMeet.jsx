@@ -4,6 +4,8 @@ import Input from "./Reusable/Input";
 import Button from "./Reusable/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { sendCode } from "../store/authSlice";
+import {useNavigate} from "react-router-dom"
+
 
 function StartMeet() {
   const [user, setUser] = useState("");
@@ -17,7 +19,7 @@ function StartMeet() {
   const socket = useMemo(() => io("wss://melasocketserver.vercel.app"), []);
   const ref = useRef(null);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   function handleMessage() {
     if (singleMessage) {
       socket.emit("message", { userData, user, singleMessage });
@@ -69,6 +71,7 @@ function StartMeet() {
         />
         <Button text={copy} className="text-white" onClick={handleCopy} />
       </div>
+      <Button text={"Some issue with the app ! You can watch the video for Now , Click this button!"} className="text-white bg-red-500 w-full active:bg-red-400" onClick={() => navigate("/help")} />
       <div className="w-full h-[580px] overflow-y-auto p-4 scroll-smooth no-scrollbar">
         {alert && alert.length
           ? alert.map((alert, index) => (
