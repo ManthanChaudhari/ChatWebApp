@@ -58,7 +58,7 @@ function StartMeet() {
       socket.off("user-joined");
       socket.disconnect();
     }
-  }, [roomCode, socket]);
+  }, []);
   
   return (
     <div className="w-full h-full">
